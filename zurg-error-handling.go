@@ -1,4 +1,4 @@
-package zurg_error_handling
+package caddyplugzurg
 
 import (
 	"bytes"

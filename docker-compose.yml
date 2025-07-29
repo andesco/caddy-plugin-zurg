@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  caddy-zurg:
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./error_videos:/etc/zurg/error_videos:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    environment:
+      - HOSTNAME=${HOSTNAME:-zurg.example.com}
+      - ZURG_BACKEND=${ZURG_BACKEND:-host.docker.internal:9999}
+    restart: unless-stopped
+    networks:
+      - caddy
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+networks:
+  caddy:
+    driver: bridge

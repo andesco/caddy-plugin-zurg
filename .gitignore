@@ -1,0 +1,29 @@
+# Binaries
+caddy-zurg
+caddy-with-zurg-plugin
+
+# Go
+go.sum
+
+# Logs
+*.log
+
+# Generated videos (optional - users generate their own)
+*.mp4
+
+# Generated Caddyfile (created by deploy script)
+Caddyfile
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+tmp/
+temp/

@@ -70,7 +70,7 @@ func (z *ZurgErrorHandler) Provision(ctx caddy.Context) error {
 	
 	// Set default video path if none provided
 	if z.VideoPath == "" {
-		z.VideoPath = "/etc/zurg/zurg.git/error_videos"
+		z.VideoPath = "/etc/zurg/caddy-plugin-zurg/error_videos"
 	}
 	
 	return nil

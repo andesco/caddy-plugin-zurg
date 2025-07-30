@@ -2,13 +2,15 @@ version: '3.8'
 
 services:
   caddy-zurg:
-    build: .
+    build:
+      context: /etc/zurg/caddy-plugin-zurg/
+      dockerfile: Dockerfile.caddy
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile:ro
-      - ./error_videos:/etc/zurg/error_videos:ro
+      - /etc/zurg/caddy-plugin-zurg/Caddyfile:/etc/caddy/Caddyfile:ro
+      - /etc/zurg/caddy-plugin-zurg/error_videos:/etc/zurg/caddy-plugin-zurg/error_videos:ro
       - caddy_data:/data
       - caddy_config:/config
     environment:

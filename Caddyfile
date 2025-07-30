@@ -1,0 +1,11 @@
+{
+    order zurg_error_handler before reverse_proxy
+}
+
+zurg.example.com {
+    zurg_error_handler {
+        video_path "/etc/zurg/caddy-plugin-zurg/error_videos" # optional
+        strm_paths "/strm/" # optional
+    }
+    reverse_proxy localhost:9999
+}
